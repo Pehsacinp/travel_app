@@ -20,7 +20,7 @@ class AppImages {
   static const imgSair = 'lib/assets/contents/img_sair.png';
 
   // register
-  static const imgRegister = 'lib/assets/contents/img_register.png';
+  static const imgRegister = 'lib/assets/contents/img_register.jpeg';
 
   // dashboard_dot_images
   static const firstDot = 'lib/assets/contents/img_neel_gardens.png';

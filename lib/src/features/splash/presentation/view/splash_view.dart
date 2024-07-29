@@ -3,6 +3,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:preload_page_view/preload_page_view.dart';
 import 'package:travel_app/src/core/constants/app_const.dart';
 import 'package:travel_app/src/core/functions/app_color.dart';
 import 'package:travel_app/src/core/functions/app_images.dart';
@@ -35,21 +36,6 @@ class _SplashViewState extends State<SplashView> {
   }
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    precacheImage(const AssetImage(AppImages.imgSairTwo), context);
-    precacheImage(const AssetImage(AppImages.imgLogin), context);
-    precacheImage(const AssetImage(AppImages.imgRegister), context);
-    precacheImage(const AssetImage(AppImages.imgSair), context);
-  }
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocConsumer<SplashCubit, int>(
@@ -57,15 +43,14 @@ class _SplashViewState extends State<SplashView> {
           _pageController.jumpToPage(pageIndex);
         },
         builder: (context, pageIndex) {
-          return PageView.builder(
-            controller: _pageController,
-            onPageChanged: (index) {
-              context.read<SplashCubit>().changePage(index);
-            },
+          return PreloadPageView.builder(
             itemCount: _pages.length,
             itemBuilder: (context, index) {
               return _pages[index];
             },
+            onPageChanged: (int position) {},
+            preloadPagesCount: 3,
+            controller: PreloadPageController(),
           );
         },
       ),
