@@ -1,3 +1,4 @@
 # travel_app
 
-![app_caffe_shop_gif](C:\Users\Pyrotoxin\Downloads\WhatsApp Video 2024-07-29 at 10.49.48.gif)
+
+![app_caffe_shop_gif](https://github.com/Pehsacinp/app_caffe_shop/assets/gif/travel_app_gif)
