@@ -1,3 +1,3 @@
 # travel_app
 
-travel_app_gif.gif
+travel_app_gif.mp4
